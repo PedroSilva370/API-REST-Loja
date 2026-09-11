@@ -1,11 +1,61 @@
+// ====================
+// LOGIN
+// ====================
+
+let botaoEntrar = document.getElementById("entrar");
+
+botaoEntrar.addEventListener("click", function() {
+
+    let username = document.getElementById("username").value;
+    let senha = document.getElementById("senha").value;
+
+    fetch("https://api-rest-loja.onrender.com/login", {
+
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            username: username,
+            senha: senha
+        })
+
+    })
+    .then(resposta => resposta.json())
+    .then(token => {
+
+        localStorage.setItem("token", token);
+
+        document.getElementById("mensagem").textContent =
+            "Login realizado com sucesso!";
+
+        console.log("Login realizado!");
+
+    })
+    .catch(erro => {
+
+        console.log("Erro no login:", erro);
+
+    });
+
+});
+
+
+// ====================
+// CARREGAR PRODUTOS
+// ====================
+
 let botaoProdutos = document.getElementById("carregarProdutos");
 let areaProdutos = document.getElementById("produtos");
-
 
 function carregarProdutos() {
 
     fetch("https://api-rest-loja.onrender.com/produtos")
+
         .then(resposta => resposta.json())
+
         .then(listaProdutos => {
 
             console.log("Produtos recebidos:", listaProdutos);
@@ -26,21 +76,29 @@ function carregarProdutos() {
                 `;
 
                 areaProdutos.appendChild(elemento);
+
             });
 
         })
+
         .catch(erro => {
+
             console.log("Erro:", erro);
+
         });
+
 }
 
-
 botaoProdutos.addEventListener("click", function() {
+
     carregarProdutos();
+
 });
 
 
+// ====================
 // CADASTRAR PRODUTO
+// ====================
 
 let botaoCadastrar = document.getElementById("cadastrarProduto");
 
@@ -57,18 +115,24 @@ botaoCadastrar.addEventListener("click", function() {
         method: "POST",
 
         headers: {
+
             "Content-Type": "application/json",
             "Authorization": "Bearer " + token
+
         },
 
         body: JSON.stringify({
+
             nome: nome,
             preco: preco,
             estoque: estoque
+
         })
 
     })
+
     .then(resposta => resposta.json())
+
     .then(dados => {
 
         console.log("Produto cadastrado:", dados);
@@ -76,14 +140,19 @@ botaoCadastrar.addEventListener("click", function() {
         carregarProdutos();
 
     })
+
     .catch(erro => {
+
         console.log("Erro:", erro);
+
     });
 
 });
 
 
+// ====================
 // EDITAR PRODUTO
+// ====================
 
 let botaoEditar = document.getElementById("editarProduto");
 
@@ -101,18 +170,24 @@ botaoEditar.addEventListener("click", function() {
         method: "PUT",
 
         headers: {
+
             "Content-Type": "application/json",
             "Authorization": "Bearer " + token
+
         },
 
         body: JSON.stringify({
+
             nome: nome,
             preco: preco,
             estoque: estoque
+
         })
 
     })
+
     .then(resposta => resposta.json())
+
     .then(dados => {
 
         console.log("Produto atualizado:", dados);
@@ -120,13 +195,19 @@ botaoEditar.addEventListener("click", function() {
         carregarProdutos();
 
     })
+
     .catch(erro => {
+
         console.log("Erro:", erro);
+
     });
 
 });
 
+
+// ====================
 // EXCLUIR PRODUTO
+// ====================
 
 let botaoExcluir = document.getElementById("excluirProduto");
 
@@ -141,11 +222,15 @@ botaoExcluir.addEventListener("click", function() {
         method: "DELETE",
 
         headers: {
+
             "Authorization": "Bearer " + token
+
         }
 
     })
+
     .then(resposta => resposta.json())
+
     .then(dados => {
 
         console.log("Produto excluído:", dados);
@@ -153,8 +238,11 @@ botaoExcluir.addEventListener("click", function() {
         carregarProdutos();
 
     })
+
     .catch(erro => {
+
         console.log("Erro:", erro);
+
     });
 
 });
