@@ -9,11 +9,7 @@ load_dotenv()
 password_hash = PasswordHash.recommended()
 
 conexao = psycopg.connect(
-    dbname=os.getenv("DB_NAME"),
-    user=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),
-    host=os.getenv("DB_HOST"),
-    port=os.getenv("DB_PORT")
+    os.getenv("DATABASE_URL")
 )
 
 cursor = conexao.cursor(row_factory=dict_row)
