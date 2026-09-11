@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API REST de Loja</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section>
+        <h1>Login</h1>
+
+        <input type="text" id="username" placeholder="Usuário">
+
+        <input type="password" id="senha" placeholder="Senha">
+
+        <button id="entrar">Entrar</button>
+
+        <p id="mensagem"></p>
+    </section>
+
+    <section>
+        <h2>Produtos</h2>
+
+        <button id="carregarProdutos">Carregar produtos</button>
+
+        <div id="produtos"></div>
+    </section>
+
+    <section>
+        <h2>Cadastrar produto</h2>
+
+        <input type="text" id="nomeProduto" placeholder="Nome">
+
+        <input type="number" id="precoProduto" placeholder="Preço">
+
+        <input type="number" id="estoqueProduto" placeholder="Estoque">
+
+        <button id="cadastrarProduto">Cadastrar</button>
+    </section>
+
+    <section>
+        <h2>Editar produto</h2>
+
+        <input type="number" id="idProdutoEditar" placeholder="ID do produto">
+
+        <input type="text" id="nomeProdutoEditar" placeholder="Novo nome">
+
+        <input type="number" id="precoProdutoEditar" placeholder="Novo preço">
+
+        <input type="number" id="estoqueProdutoEditar" placeholder="Novo estoque">
+
+        <button id="editarProduto">Editar</button>
+    </section>
+
+    <section>
+        <h2>Excluir produto</h2>
+
+        <input type="number" id="idProdutoExcluir" placeholder="ID do produto">
+
+        <button id="excluirProduto">Excluir</button>
+    </section>
+    <script src="script.js"></script>
+
+</body>
+</html>

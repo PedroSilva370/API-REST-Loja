@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px;
+}
+
+button {
+    padding: 8px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+#produtos {
+    margin-top: 20px;
+}
+
+#produtos p {
+    background-color: white;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.produto {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.produto h3 {
+    margin-top: 0;
+}
+
+section {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #333;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    background-color: #222;
+    color: white;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #444;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+section input {
+    box-sizing: border-box;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+section button {
+    align-self: flex-start;
+}
+
+section h1,
+section h2 {
+    margin-bottom: 10px;
+}
