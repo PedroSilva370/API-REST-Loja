@@ -4,7 +4,7 @@ let areaProdutos = document.getElementById("produtos");
 
 function carregarProdutos() {
 
-    fetch("http://127.0.0.1:8000/produtos")
+    fetch("https://api-rest-loja.onrender.com/produtos")
         .then(resposta => resposta.json())
         .then(listaProdutos => {
 
@@ -52,7 +52,7 @@ botaoCadastrar.addEventListener("click", function() {
 
     let token = localStorage.getItem("token");
 
-    fetch("http://127.0.0.1:8000/produtos", {
+    fetch("https://api-rest-loja.onrender.com/produtos", {
 
         method: "POST",
 
@@ -96,7 +96,7 @@ botaoEditar.addEventListener("click", function() {
 
     let token = localStorage.getItem("token");
 
-    fetch("http://127.0.0.1:8000/produtos/" + id, {
+    fetch("https://api-rest-loja.onrender.com/produtos/" + id, {
 
         method: "PUT",
 
@@ -136,7 +136,7 @@ botaoExcluir.addEventListener("click", function() {
 
     let token = localStorage.getItem("token");
 
-    fetch("http://127.0.0.1:8000/produtos/" + id, {
+    fetch("https://api-rest-loja.onrender.com/produtos/" + id, {
 
         method: "DELETE",
 
