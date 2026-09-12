@@ -5,7 +5,7 @@
 ![Python](https://img.shields.io/badge/python-3.10%2B-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.141.1-009688)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-336791)
-![Status](https://img.shields.io/badge/status-em%20produção-brightgreen)
+![Status](https://img.shields.io/badge/status-Concluído-blue)
 ![License](https://img.shields.io/badge/license-não%20definida-lightgrey)
 
 ## Visão Geral
