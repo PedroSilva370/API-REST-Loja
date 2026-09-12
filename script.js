@@ -23,7 +23,15 @@ botaoEntrar.addEventListener("click", function() {
         })
 
     })
-    .then(resposta => resposta.json())
+    .then(resposta => {
+
+        if (!resposta.ok) {
+            throw new Error("Usuário ou senha inválidos");
+        }
+
+        return resposta.json();
+
+    })
     .then(token => {
 
         localStorage.setItem("token", token);
@@ -31,10 +39,13 @@ botaoEntrar.addEventListener("click", function() {
         document.getElementById("mensagem").textContent =
             "Login realizado com sucesso!";
 
-        console.log("Login realizado!");
+        console.log("Token recebido:", token);
 
     })
     .catch(erro => {
+
+        document.getElementById("mensagem").textContent =
+            "Erro: " + erro.message;
 
         console.log("Erro no login:", erro);
 
